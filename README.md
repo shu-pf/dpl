@@ -4,7 +4,7 @@ Use deepl translation in the CLI.
 
 ## Demo
 
-![image](https://user-images.githubusercontent.com/61904065/151411814-f56f9a84-ab43-479d-bd1e-187b278fcd14.png)
+![image](https://user-images.githubusercontent.com/61904065/151413018-5acd8945-19f2-4668-8941-2aa189c3dd0f.png)
 ![image](https://user-images.githubusercontent.com/61904065/151412108-d0d73a03-0347-420f-8b0b-cb6358a874f3.png)
 
 ## Requirement
