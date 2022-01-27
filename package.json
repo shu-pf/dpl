@@ -1,0 +1,15 @@
+{
+  "name": "dpl",
+  "version": "0.0.0",
+  "description": "Use deepl with cli.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shugo Furuse <shugoena@gmail.com> (https://github.com/shu-pf)",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "deepl": "^1.0.13"
+  }
+}
