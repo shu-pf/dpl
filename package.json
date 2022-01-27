@@ -1,6 +1,6 @@
 {
   "name": "deepl-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Use deepl with cli.",
   "main": "lib/index.js",
   "scripts": {
@@ -13,6 +13,6 @@
     "deepl": "^1.0.13"
   },
   "bin": {
-    "cli": "bin/cli.js"
+    "dpl": "bin/cli.js"
   }
 }
