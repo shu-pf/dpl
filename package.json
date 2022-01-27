@@ -1,5 +1,5 @@
 {
-  "name": "dpl",
+  "name": "deepl-cli",
   "version": "0.0.0",
   "description": "Use deepl with cli.",
   "main": "index.js",
