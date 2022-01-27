@@ -22,8 +22,8 @@ To use this package, you first need to set an API key and Target Language.
 ### Config(Required)
 
 ```
-// dpl [API Key] [Target Language]
-$ dpl XXXXX XX
+// dpl [API Type] [API Key] [Target Language]
+$ dpl [pro or free] [Your API Key] [EN-US ZH ...etc]
 ```
 
 #### api type
