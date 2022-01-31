@@ -90,3 +90,15 @@ You'll get a translated text back.
 You'll get a translated text back.
 ...
 ```
+
+## For Developers
+
+### Test
+
+Create a .env in the root file and specify the API_KEY to be used for testing.
+
+.env
+
+```
+API_KEY="XXX"
+```

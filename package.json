@@ -1,10 +1,10 @@
 {
   "name": "deepl-cli",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Use deepl with cli.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -13,9 +13,14 @@
   "author": "Shugo Furuse <shugoena@gmail.com> (https://github.com/shu-pf)",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.25.0"
+    "axios": "^0.25.0",
+    "inquirer": "^8.2.0"
   },
   "bin": {
     "dpl": "bin/cli.js"
+  },
+  "devDependencies": {
+    "dotenv": "^15.0.0",
+    "jest": "^27.4.7"
   }
 }
