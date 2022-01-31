@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.25.0",
-    "cli-select": "^1.1.2"
+    "inquirer": "^8.2.0"
   },
   "bin": {
     "dpl": "bin/cli.js"
