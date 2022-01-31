@@ -4,7 +4,7 @@
   "description": "Use deepl with cli.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,9 @@
   },
   "bin": {
     "dpl": "bin/cli.js"
+  },
+  "devDependencies": {
+    "dotenv": "^15.0.0",
+    "jest": "^27.4.7"
   }
 }
