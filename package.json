@@ -13,7 +13,8 @@
   "author": "Shugo Furuse <shugoena@gmail.com> (https://github.com/shu-pf)",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.25.0"
+    "axios": "^0.25.0",
+    "inquirer": "^8.2.0"
   },
   "bin": {
     "dpl": "bin/cli.js"
