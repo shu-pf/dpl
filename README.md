@@ -2,6 +2,12 @@
 
 Use deepl translation in the CLI.
 
+## For users who are using ver 0.0.16 or lower.
+
+In versions below 0.0.16, the code was not handling errors properly, so we fixed it.
+If you have any problems, please update to 0.0.16 or higher and check the errors.
+If you still can't solve the problem, please post an issue on github.
+
 ## Demo
 
 ![image](https://user-images.githubusercontent.com/61904065/151413018-5acd8945-19f2-4668-8941-2aa189c3dd0f.png)
