@@ -1,18 +1,19 @@
 import axios from 'axios';
+import url from 'url';
 
-interface Request {
-  text: string;
-  target_lang: string;
-}
+// interface Request {
+//   text: string;
+//   target_lang: string;
+// }
 
-interface Response {
-  data: {
-    translations: {
-      detected_source_language: string;
-      text: string;
-    }[];
-  };
-}
+// interface Response {
+//   data: {
+//     translations: {
+//       detected_source_language: string;
+//       text: string;
+//     }[];
+//   };
+// }
 
 const fetchToDeepl = function (
   text: string,
@@ -34,11 +35,13 @@ const fetchToDeepl = function (
     );
   }
 
-  // FIXME: 1つ目のgenericsの型指定に何を入れるべきかわからない
-  return axios.post<Request, Response, Request>(path, {
+  const params = new url.URLSearchParams({
     text,
     target_lang: targetLang,
   });
+
+  // FIXME: 1つ目のgenericsの型指定に何を入れるべきかわからない
+  return axios.post(path, params.toString());
 };
 
 export { fetchToDeepl };
