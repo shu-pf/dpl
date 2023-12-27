@@ -1,8 +1,10 @@
+import { settingFilePath } from '../const/settingFilePath';
+
 const importSetting = function () {
   let setting;
 
   try {
-    setting = require('../../setting.json');
+    setting = require(settingFilePath);
 
     return setting;
   } catch (e) {

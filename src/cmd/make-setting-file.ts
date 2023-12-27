@@ -1,9 +1,7 @@
 import inquirer from 'inquirer';
 import { languageOptions } from '../const/languageOptions';
-import os from 'os';
 import { writeFileWithDirectoryCreation } from '../utils/file';
-
-const homeDirectory = os.homedir();
+import { settingFilePath } from '../const/settingFilePath';
 
 const makeSettingFile = async () => {
   console.log(
@@ -39,10 +37,7 @@ const makeSettingFile = async () => {
 
   const settingJson = JSON.stringify(setting);
 
-  writeFileWithDirectoryCreation(
-    homeDirectory + '/.config/dpl/setting.json',
-    settingJson
-  );
+  writeFileWithDirectoryCreation(settingFilePath, settingJson);
 
   console.log('Setup completed.');
 
