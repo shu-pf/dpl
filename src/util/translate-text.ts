@@ -1,6 +1,13 @@
 const { fetchToDeepl } = require('./fetch-to-deepl');
 
-const translateText = async (text, { apiType, authKey, targetLang }) => {
+const translateText = async (
+  text: string,
+  {
+    apiType,
+    authKey,
+    targetLang,
+  }: { apiType: string; authKey: string | undefined; targetLang: string }
+) => {
   try {
     const result = await fetchToDeepl(text, {
       apiType,
@@ -9,8 +16,10 @@ const translateText = async (text, { apiType, authKey, targetLang }) => {
     });
     const translatedText = result.data.translations[0].text;
     return translatedText;
-  } catch (err) {
+  } catch (err: unknown) {
+    // @ts-ignore
     if (err.response) {
+      // @ts-ignore
       switch (err.response.status) {
         case 403:
           console.log(

@@ -1,7 +1,14 @@
 const axios = require('axios');
 const url = require('url');
 
-const fetchToDeepl = function (text, { apiType, authKey, targetLang }) {
+const fetchToDeepl = function (
+  text: string,
+  {
+    apiType,
+    authKey,
+    targetLang,
+  }: { apiType: string; authKey: string | undefined; targetLang: string }
+) {
   let path;
 
   if (apiType == 'pro') {

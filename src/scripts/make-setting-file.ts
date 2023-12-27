@@ -1,6 +1,6 @@
-const inquirer = require('inquirer');
-const { languages } = require('../util/languages');
-const { writeFile } = require('fs/promises');
+import inquirer from 'inquirer';
+import { languages } from '../util/languages';
+import { writeFile } from 'fs/promises';
 
 const makeSettingFile = async () => {
   console.log(
@@ -27,6 +27,7 @@ const makeSettingFile = async () => {
       type: 'list',
       message: 'Select the language you want to translate into:',
       filter: (answer) => {
+        // @ts-ignore
         return languages[answer];
       },
       choices: Object.keys(languages),

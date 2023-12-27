@@ -1,6 +1,10 @@
-const { translateText } = require('../util/translate-text');
+import { translateText } from '../util/translate-text';
 
-const singleConversionMode = async (setting) => {
+const singleConversionMode = async (setting: {
+  apiType: string;
+  authKey: string | undefined;
+  targetLang: string;
+}) => {
   const translatedText = await translateText(process.argv[2], setting);
 
   console.log(translatedText);
