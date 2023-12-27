@@ -1,4 +1,4 @@
-const { fetchToDeepl } = require('./fetch-to-deepl');
+import { fetchToDeepl } from './fetch-to-deepl';
 
 const translateText = async (
   text: string,
@@ -15,6 +15,7 @@ const translateText = async (
       targetLang,
     });
     const translatedText = result.data.translations[0].text;
+
     return translatedText;
   } catch (err: unknown) {
     // @ts-ignore

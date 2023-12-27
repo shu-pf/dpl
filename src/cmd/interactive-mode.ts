@@ -7,7 +7,7 @@ const interactiveMode = async (setting: any) => {
     output: process.stdout,
   });
 
-  reader.on('line', async (line: any) => {
+  reader.on('line', async (line: string) => {
     const translatedText = await translateText(line, setting);
 
     console.log(translatedText);
