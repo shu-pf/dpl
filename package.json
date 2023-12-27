@@ -4,6 +4,8 @@
   "description": "Use deepl with cli.",
   "main": "lib/index.js",
   "scripts": {
+    "start": "node bin/cli.js",
+    "config": "node bin/cli.js setting init",
     "test": "jest"
   },
   "repository": {
