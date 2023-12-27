@@ -2,3 +2,4 @@ node_modules
 setting.json
 .env
 dist
+.vscode
