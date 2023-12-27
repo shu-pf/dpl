@@ -4,16 +4,17 @@ import { makeSettingFile } from './cmd/make-setting-file';
 import { importSetting } from './config/import-setting';
 
 const main = async () => {
-  let setting;
+  if (process.argv.length == 3 && process.argv[2] == 'setting') {
+    await makeSettingFile();
+    return;
+  }
+
+  importSetting();
 
   if (process.argv.length == 2) {
-    setting = importSetting();
-    interactiveMode(setting);
-  } else if (process.argv.length == 3 && process.argv[2] == 'setting') {
-    makeSettingFile();
+    await interactiveMode();
   } else {
-    setting = importSetting();
-    singleConversionMode(setting);
+    await singleConversionMode();
   }
 };
 

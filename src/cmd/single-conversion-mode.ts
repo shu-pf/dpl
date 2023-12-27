@@ -1,10 +1,7 @@
 import { translateText } from '../api/translate-text';
+import { setting } from '../config/import-setting';
 
-const singleConversionMode = async (setting: {
-  apiType: string;
-  authKey: string | undefined;
-  targetLang: string;
-}) => {
+const singleConversionMode = async () => {
   // 2番目以降の引数を合わせて一つの文字列にする
   const string = process.argv.slice(2).join(' ');
 

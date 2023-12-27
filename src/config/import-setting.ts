@@ -1,12 +1,19 @@
+import { languageOptions } from '../const/languageOptions';
 import { settingFilePath } from '../const/settingFilePath';
 
-const importSetting = function () {
-  let setting;
+interface Setting {
+  apiType: 'free' | 'pro';
+  authKey: string;
+  targetLang: keyof typeof languageOptions;
+}
 
+// {"apiType":"pro","authKey":"e3c996b1-efab-d8bd-d974-8e1aeda57e52","targetLang":"JA"}⏎
+
+let setting: Setting;
+
+const importSetting = function () {
   try {
     setting = require(settingFilePath);
-
-    return setting;
   } catch (e) {
     const err = e as NodeJS.ErrnoException;
 
@@ -21,4 +28,4 @@ const importSetting = function () {
   }
 };
 
-export { importSetting };
+export { importSetting, setting };
