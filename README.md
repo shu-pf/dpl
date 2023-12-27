@@ -75,13 +75,13 @@ https://www.deepl.com/ja/docs-api/translating-text/request/
 ### 1. Normal mode
 
 ```sh
-$ dpl <text>
+dpl <text>
 ```
 
 ### 2. Interactive mode
 
 ```sh
-$ dpl
+dpl
 ```
 
 ## For Developers
