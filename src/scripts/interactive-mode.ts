@@ -1,13 +1,13 @@
-const { translateText } = require("../util/translate-text");
-const readline = require("readline");
+const { translateText } = require('../util/translate-text');
+const readline = require('readline');
 
-exports.interactiveMode = async (setting) => {
+const interactiveMode = async (setting) => {
   const reader = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
 
-  reader.on("line", async (line) => {
+  reader.on('line', async (line) => {
     const translatedText = await translateText(line, setting);
 
     console.log(translatedText);
@@ -16,3 +16,5 @@ exports.interactiveMode = async (setting) => {
 
   reader.prompt();
 };
+
+export { interactiveMode };

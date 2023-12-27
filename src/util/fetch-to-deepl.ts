@@ -1,13 +1,13 @@
-const axios = require("axios");
-const url = require("url");
+const axios = require('axios');
+const url = require('url');
 
-exports.fetchToDeepl = function (text, { apiType, authKey, targetLang }) {
+const fetchToDeepl = function (text, { apiType, authKey, targetLang }) {
   let path;
 
-  if (apiType == "pro") {
-    path = "https://api.deepl.com/v2/translate?auth_key=" + authKey;
-  } else if (apiType == "free") {
-    path = "https://api-free.deepl.com/v2/translate?auth_key=" + authKey;
+  if (apiType == 'pro') {
+    path = 'https://api.deepl.com/v2/translate?auth_key=' + authKey;
+  } else if (apiType == 'free') {
+    path = 'https://api-free.deepl.com/v2/translate?auth_key=' + authKey;
   } else {
     return TypeError(
       "Invalid api type. The API Type is expected to be 'free' or 'pro'."
@@ -21,3 +21,5 @@ exports.fetchToDeepl = function (text, { apiType, authKey, targetLang }) {
 
   return axios.post(path, params.toString());
 };
+
+export { fetchToDeepl };

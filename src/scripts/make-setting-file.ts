@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const { languages } = require('../util/languages');
 const { writeFile } = require('fs/promises');
 
-exports.makeSettingFile = async () => {
+const makeSettingFile = async () => {
   console.log(
     'Before setting up, you need to issue an API key for Deepl, and apply for API usage on the official Deepl website.'
   );
@@ -42,3 +42,5 @@ exports.makeSettingFile = async () => {
 
   process.exit(0);
 };
+
+export { makeSettingFile };

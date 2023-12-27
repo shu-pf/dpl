@@ -1,16 +1,18 @@
-exports.importSetting = () => {
+const importSetting = () => {
   let setting;
   try {
-    setting = require("../../setting.json");
+    setting = require('../../setting.json');
     return setting;
   } catch (e) {
-    if (e.code == "MODULE_NOT_FOUND") {
+    if (e.code == 'MODULE_NOT_FOUND') {
       console.log("Can't find setting file.");
       console.log("Please run 'dpl setting init'.");
-      console.log("See Readme for details.");
+      console.log('See Readme for details.');
       process.exit(0);
     } else {
       throw e;
     }
   }
 };
+
+export { importSetting };

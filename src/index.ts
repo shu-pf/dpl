@@ -1,10 +1,10 @@
 // Mode
-const { interactiveMode } = require('./scripts/interactive-mode');
-const { singleConversionMode } = require('./scripts/single-conversion-mode');
-const { makeSettingFile } = require('./scripts/make-setting-file');
+import { interactiveMode } from './scripts/interactive-mode';
+import { singleConversionMode } from './scripts/single-conversion-mode';
+import { makeSettingFile } from './scripts/make-setting-file';
 
 // util
-const { importSetting } = require('./util/import-setting');
+import { importSetting } from './util/import-setting';
 
 const main = async () => {
   let setting;
