@@ -6,7 +6,7 @@
   "scripts": {
     "bundle": "esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/bundle.js",
     "start": "pnpm bundle && node dist/bundle.js",
-    "build": "pnpm bundle && pkg dist/bundle.js -t node18-macos-arm64 -o dist/dpl",
+    "build": "pnpm bundle && pkg dist/bundle.js -t node18-macos-arm64,node18-win-x64 -o dist/dpl",
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write src/**/*.ts",
     "test": "jest"
