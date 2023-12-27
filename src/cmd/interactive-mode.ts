@@ -1,6 +1,6 @@
 import { translateText } from '../api/translate-text';
 import readline from 'readline';
-import { setting } from '../config/import-setting';
+import { setting } from '../config/setting';
 
 const interactiveMode = async () => {
   const reader = readline.createInterface({

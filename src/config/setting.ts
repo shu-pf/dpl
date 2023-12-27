@@ -11,6 +11,10 @@ interface Setting {
 
 let setting: Setting;
 
+/**
+ * importSetting は設定ファイルを読み込む.
+ * setting を読み込む前にこの関数を実行する必要がある.
+ */
 const importSetting = function () {
   try {
     setting = require(settingFilePath);
@@ -19,8 +23,8 @@ const importSetting = function () {
 
     if (err.code == 'MODULE_NOT_FOUND') {
       console.log("Can't find setting file.");
-      console.log("Please run 'dpl setting init'.");
-      console.log('See Readme for details.');
+      console.log("Please run 'dpl setting'.");
+      console.log('See README for details.');
       process.exit(0);
     }
 

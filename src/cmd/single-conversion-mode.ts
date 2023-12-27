@@ -1,5 +1,5 @@
 import { translateText } from '../api/translate-text';
-import { setting } from '../config/import-setting';
+import { setting } from '../config/setting';
 
 const singleConversionMode = async () => {
   // 2番目以降の引数を合わせて一つの文字列にする
