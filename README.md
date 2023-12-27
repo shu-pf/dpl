@@ -75,20 +75,13 @@ https://www.deepl.com/ja/docs-api/translating-text/request/
 ### 1. Normal mode
 
 ```sh
-$ dpl Enter the text you want to translate.
-
-You'll get a translated text back.
+$ dpl <text>
 ```
 
 ### 2. Interactive mode
 
 ```sh
 $ dpl
-> Enter the text you want to translate.
-You'll get a translated text back.
-> Enter the text you want to translate.
-You'll get a translated text back.
-...
 ```
 
 ## For Developers
