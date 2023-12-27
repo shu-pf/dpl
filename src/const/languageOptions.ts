@@ -1,4 +1,4 @@
-const languages = {
+const languageOptions = {
   Bulgarian: 'BG',
   Czech: 'CS',
   Danish: 'DA',
@@ -30,6 +30,6 @@ const languages = {
   Slovenian: 'SL',
   Swedish: 'SV',
   Chinese: 'ZH',
-};
+} as const;
 
-export { languages };
+export { languageOptions };

@@ -1,6 +1,9 @@
 import inquirer from 'inquirer';
-import { languages } from '../util/languages';
+import { languageOptions } from '../const/languageOptions';
 import { writeFile } from 'fs/promises';
+import os from 'os';
+
+const homeDirectory = os.homedir();
 
 const makeSettingFile = async () => {
   console.log(
@@ -26,18 +29,17 @@ const makeSettingFile = async () => {
       name: 'targetLang',
       type: 'list',
       message: 'Select the language you want to translate into:',
-      filter: (answer) => {
-        // @ts-ignore
-        return languages[answer];
+      filter: (answer: keyof typeof languageOptions) => {
+        return languageOptions[answer];
       },
-      choices: Object.keys(languages),
+      choices: Object.keys(languageOptions),
       default: 'Japanese',
     },
   ]);
 
   const settingJson = JSON.stringify(setting);
 
-  await writeFile('~/.config/dpl/setting.json', settingJson);
+  await writeFile(homeDirectory + '.config/dpl/setting.json', settingJson);
 
   console.log('Setup completed.');
 
