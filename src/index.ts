@@ -4,7 +4,7 @@ import { singleConversionMode } from './cmd/single-conversion-mode';
 import { makeSettingFile } from './cmd/make-setting-file';
 
 // util
-import { importSetting } from './util/import-setting';
+import { importSetting } from './config/import-setting';
 
 const main = async () => {
   let setting;
