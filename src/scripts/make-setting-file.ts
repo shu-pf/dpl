@@ -37,7 +37,7 @@ const makeSettingFile = async () => {
 
   const settingJson = JSON.stringify(setting);
 
-  await writeFile(__dirname + '/../../setting.json', settingJson);
+  await writeFile('~/.config/dpl/setting.json', settingJson);
 
   console.log('Setup completed.');
 
