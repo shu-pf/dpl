@@ -4,8 +4,8 @@ Use deepl translation in the CLI.
 
 ## Demo
 
-![image](https://github.com/shu-pf/dpl/assets/61904065/be4493e7-d2cf-4e5f-b50b-e040a4bd8cb6)
-![image](https://github.com/shu-pf/dpl/assets/61904065/293a3d51-4295-45e4-b934-138ee158cbed)
+![image](https://github.com/shu-pf/dpl/assets/61904065/b481fafc-686e-4d53-bbf3-5a55e8ad6705)
+![image](https://github.com/shu-pf/dpl/assets/61904065/20023dff-1993-4d41-a21d-605838b85766)
 
 ## Installation
 
