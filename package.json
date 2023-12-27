@@ -4,7 +4,9 @@
   "description": "Use deepl with cli.",
   "main": "src/index.js",
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/bundle.js && pkg dist/bundle.js -t node18-macos-arm64 -o dist/dpl",
+    "bundle": "esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/bundle.js",
+    "start": "pnpm bundle && node dist/bundle.js",
+    "build": "pnpm bundle && pkg dist/bundle.js -t node18-macos-arm64 -o dist/dpl",
     "test": "jest"
   },
   "repository": {

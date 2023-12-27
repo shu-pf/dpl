@@ -4,6 +4,7 @@ const importSetting = () => {
     setting = require('../../setting.json');
     return setting;
   } catch (e) {
+    // @ts-ignore
     if (e.code == 'MODULE_NOT_FOUND') {
       console.log("Can't find setting file.");
       console.log("Please run 'dpl setting init'.");
