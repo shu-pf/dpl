@@ -1,5 +1,5 @@
-const axios = require('axios');
-const url = require('url');
+import axios from 'axios';
+import url from 'url';
 
 const fetchToDeepl = function (
   text: string,
