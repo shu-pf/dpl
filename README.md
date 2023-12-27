@@ -5,7 +5,7 @@ Use deepl translation in the CLI.
 ## Demo
 
 ![image](https://github.com/shu-pf/dpl/assets/61904065/be4493e7-d2cf-4e5f-b50b-e040a4bd8cb6)
-![image](https://user-images.githubusercontent.com/61904065/151412108-d0d73a03-0347-420f-8b0b-cb6358a874f3.png)
+![image](https://github.com/shu-pf/dpl/assets/61904065/293a3d51-4295-45e4-b934-138ee158cbed)
 
 ## Installation
 
