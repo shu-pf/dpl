@@ -13,14 +13,14 @@
   "author": "Shugo Furuse <shugoena@gmail.com> (https://github.com/shu-pf)",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.25.0",
-    "inquirer": "^8.2.0"
+    "axios": "^1.6.3",
+    "inquirer": "^9.2.12"
   },
   "bin": {
     "dpl": "bin/cli.js"
   },
   "devDependencies": {
-    "dotenv": "^15.0.0",
-    "jest": "^27.4.7"
+    "dotenv": "^16.3.1",
+    "jest": "^29.7.0"
   }
 }
