@@ -14,3 +14,7 @@ updates:
       dependencies:
         patterns:
           - '*'
+    ignore:
+      # commonjs形式だと最新versionが使えないので一旦対応するまで無視
+      # https://www.npmjs.com/package/inquirer
+      - dependency-name: 'inquirer'
