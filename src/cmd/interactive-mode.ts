@@ -1,4 +1,4 @@
-import { translateText } from '../util/translate-text';
+import { translateText } from '../api/translate-text';
 import readline from 'readline';
 
 const interactiveMode = async (setting: any) => {

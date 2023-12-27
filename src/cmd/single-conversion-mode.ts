@@ -1,4 +1,4 @@
-import { translateText } from '../util/translate-text';
+import { translateText } from '../api/translate-text';
 
 const singleConversionMode = async (setting: {
   apiType: string;
