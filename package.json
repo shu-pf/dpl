@@ -2,11 +2,9 @@
   "name": "deepl-cli",
   "version": "0.0.17",
   "description": "Use deepl with cli.",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node bin/cli.js",
-    "config": "node bin/cli.js setting init",
-    "build": "esbuild lib/index.js --bundle --platform=node --target=node18 --outfile=dist/bundle.js && pkg dist/bundle.js -t node18-macos-arm64 -o dist/dpl",
+    "build": "esbuild src/index.js --bundle --platform=node --target=node18 --outfile=dist/bundle.js && pkg dist/bundle.js -t node18-macos-arm64 -o dist/dpl",
     "test": "jest"
   },
   "repository": {
