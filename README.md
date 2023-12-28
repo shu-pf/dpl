@@ -39,13 +39,13 @@ To use this package, you first need to set an API key and Target Language.
 dpl setting
 ```
 
-### 1. Normal mode
+### Normal mode
 
 ```sh
 dpl <text>
 ```
 
-### 2. Interactive mode
+### Interactive mode
 
 ```sh
 dpl
