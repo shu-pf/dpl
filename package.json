@@ -1,6 +1,6 @@
 {
   "name": "deepl-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use deepl with cli.",
   "main": "src/index.js",
   "scripts": {
