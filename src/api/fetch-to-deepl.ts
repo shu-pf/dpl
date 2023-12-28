@@ -1,5 +1,6 @@
 import axios from 'axios';
 import url from 'url';
+import { languageOptions } from '../const/languageOptions';
 
 // interface Request {
 //   text: string;
@@ -15,25 +16,20 @@ import url from 'url';
 //   };
 // }
 
-const fetchToDeepl = function (
-  text: string,
-  {
-    apiType,
-    authKey,
-    targetLang,
-  }: { apiType: string; authKey: string | undefined; targetLang: string }
-) {
-  let path;
+interface Props {
+  text: string;
+  targetLang: keyof typeof languageOptions;
+  authKey: string;
+  apiType: 'free' | 'pro';
+}
 
-  if (apiType == 'pro') {
-    path = 'https://api.deepl.com/v2/translate?auth_key=' + authKey;
-  } else if (apiType == 'free') {
-    path = 'https://api-free.deepl.com/v2/translate?auth_key=' + authKey;
-  } else {
-    throw new Error(
-      "Invalid api type. The API Type is expected to be 'free' or 'pro'."
-    );
-  }
+/**
+ * DeepL APIに翻訳リクエストを送る
+ */
+const postTranslateAPI = ({ text, targetLang, authKey, apiType }: Props) => {
+  const path = `https://api${
+    apiType == 'free' && '-free'
+  }.deepl.com/v2/translate?auth_key=${authKey}`;
 
   const params = new url.URLSearchParams({
     text,
@@ -44,4 +40,4 @@ const fetchToDeepl = function (
   return axios.post(path, params.toString());
 };
 
-export { fetchToDeepl };
+export { postTranslateAPI };

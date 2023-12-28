@@ -1,51 +1,48 @@
-import { fetchToDeepl } from './fetch-to-deepl';
+import { postTranslateAPI } from './fetch-to-deepl';
+import { languageOptions } from '../const/languageOptions';
+import { AxiosError } from 'axios';
 
-const translateText = async (
-  text: string,
-  {
-    apiType,
-    authKey,
-    targetLang,
-  }: { apiType: string; authKey: string | undefined; targetLang: string }
-) => {
+interface Props {
+  text: string;
+  targetLang: keyof typeof languageOptions;
+  authKey: string;
+  apiType: 'free' | 'pro';
+}
+
+/**
+ * テキストを翻訳する
+ */
+const translateText = async ({ text, apiType, authKey, targetLang }: Props) => {
   try {
-    const result = await fetchToDeepl(text, {
-      apiType,
-      authKey,
+    const result = await postTranslateAPI({
+      text,
       targetLang,
+      authKey,
+      apiType,
     });
+
     const translatedText = result.data.translations[0].text;
 
     return translatedText;
   } catch (err: unknown) {
-    // @ts-ignore
-    if (err.response) {
-      // @ts-ignore
-      switch (err.response.status) {
-        case 403:
-          console.log(
-            'Request Error: Authorization failed. Please supply a valid auth_key parameter.\n'
-          );
-          console.log(
-            'It seems that this error also occurs when the API Type is different.\nIs the API Type correct?'
-          );
-          process.exit(1);
-        case 429:
-          console.log(
-            'Request Error: Too many requests. Please wait and resend your request.'
-          );
-          process.exit(1);
-        case 456:
-          console.log(
-            'Request Error: Quota exceeded. The character limit has been reached.'
-          );
-          process.exit(1);
-        default:
-          throw err;
-      }
-    } else {
-      throw err;
+    const error = err as AxiosError;
+
+    if (error.response?.status === 403) {
+      console.error(
+        `Failed to get translation results.
+        API key or API type may be incorrect.
+        `
+      );
+      return;
+    } else if (error.response?.status === 429) {
+      console.error('Too many requests. Please wait and resend your request.');
+      return;
+    } else if (error.response?.status === 456) {
+      console.error('Quota exceeded. The character limit has been reached.');
+      return;
     }
+
+    throw error;
   }
 };
 
