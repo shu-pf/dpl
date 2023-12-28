@@ -49,6 +49,13 @@ dpl <text>
 
 ```sh
 dpl
+
+Press "t" to translate.
+Press "q" to quit.
+
+> <text>
+> t
+<translated text>
 ```
 
 ## For Developers
