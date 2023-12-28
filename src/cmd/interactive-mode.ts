@@ -10,6 +10,7 @@ import { showSpinner, stopSpinner } from '../utils/terminal';
 const interactiveMode = () => {
   const lines: string[] = [];
   console.log(chalk.green('Press "t" to translate.'));
+  console.log('Press "q" to quit.');
   console.log('--------------------------');
 
   const reader = readline.createInterface({
@@ -32,6 +33,9 @@ const interactiveMode = () => {
       console.log('--------------------------');
       lines.length = 0;
       reader.prompt();
+      return;
+    } else if (line === 'q') {
+      reader.close();
       return;
     } else {
       process.stdout.write('> ');
