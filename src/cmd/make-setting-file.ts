@@ -41,8 +41,10 @@ const makeSettingFile = async () => {
 
   writeFileWithDirectoryCreation(settingFilePath, settingJson);
 
+  /**
+   * 終了処理
+   */
   console.log('Setup completed.');
-
   process.exit(0);
 };
 

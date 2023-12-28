@@ -12,7 +12,7 @@ const main = async () => {
   importSetting();
 
   if (process.argv.length == 2) {
-    await interactiveMode();
+    interactiveMode();
   } else {
     await singleConversionMode();
   }

@@ -1,7 +1,9 @@
 import path from 'path';
 import fs from 'fs';
 
-// ディレクトリを作成してファイルを書き込む関数
+/**
+ * ディレクトリを作成してファイルを書き込む関数
+ */
 async function writeFileWithDirectoryCreation(filePath: string, data: string) {
   const directory = path.dirname(filePath);
 
