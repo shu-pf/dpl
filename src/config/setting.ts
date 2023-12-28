@@ -1,13 +1,16 @@
 import { languageOptions } from '../const/languageOptions';
 import { settingFilePath } from '../const/settingFilePath';
 
+/**
+ * 設定ファイルはjson形式で以下のように保存される.
+ * {"apiType":"pro","authKey":"xxxxx-xxxxx-xxxxx-xxxxx","targetLang":"JA"}
+ */
+
 interface Setting {
   apiType: 'free' | 'pro';
   authKey: string;
   targetLang: keyof typeof languageOptions;
 }
-
-// {"apiType":"pro","authKey":"e3c996b1-efab-d8bd-d974-8e1aeda57e52","targetLang":"JA"}⏎
 
 let setting: Setting;
 
