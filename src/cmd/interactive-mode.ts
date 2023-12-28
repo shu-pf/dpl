@@ -8,7 +8,11 @@ import chalk from 'chalk';
  */
 const interactiveMode = () => {
   const lines: string[] = [];
-  console.log(chalk.green('Press "t" to translate.'));
+  console.log(
+    chalk.green(
+      'Press "t" to translate. (Press "tf" to translate without linefeed)'
+    )
+  );
   console.log('Press "q" to quit.');
   console.log('--------------------------');
 
@@ -18,9 +22,18 @@ const interactiveMode = () => {
   });
 
   reader.on('line', async (line: string) => {
-    if (line === 't') {
+    if (line === 't' || line === 'tf') {
+      let text: string;
+
+      if (line === 'tf') {
+        // tf が指定された場合は改行を削除
+        text = lines.join(' ');
+      } else {
+        text = lines.join('\n');
+      }
+
       const translatedText = await translateText({
-        text: lines.join('\n'),
+        text,
         ...setting,
       });
 
@@ -29,13 +42,15 @@ const interactiveMode = () => {
       lines.length = 0;
       reader.prompt();
       return;
-    } else if (line === 'q') {
+    }
+
+    if (line === 'q') {
       reader.close();
       return;
-    } else {
-      process.stdout.write('> ');
-      lines.push(line);
     }
+
+    process.stdout.write('> ');
+    lines.push(line);
   });
 
   reader.prompt();
