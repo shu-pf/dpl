@@ -7,10 +7,6 @@ const main = async () => {
   if (process.argv.length == 3 && process.argv[2] == 'setting') {
     await makeSettingFile();
     return;
-  } else if (process.argv.length == 3 && process.argv[2] == 'version') {
-    const version = process.env.npm_package_version;
-    console.log(version);
-    return;
   }
 
   importSetting();

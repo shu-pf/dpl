@@ -1,6 +1,5 @@
 import { translateText } from '../api/translate-text';
 import { setting } from '../config/setting';
-import { showSpinner, stopSpinner } from '../utils/terminal';
 
 /**
  * 単発変換モード
@@ -12,15 +11,10 @@ const singleConversionMode = async () => {
   /**
    * 翻訳処理
    */
-
-  const spinner = showSpinner('Translating');
-
   const translatedText = await translateText({
     text: string,
     ...setting,
   });
-
-  stopSpinner(spinner);
 
   console.log(translatedText);
 

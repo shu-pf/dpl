@@ -7,11 +7,11 @@ import { settingFilePath } from '../const/settingFilePath';
  * 設定ファイルを作成する
  */
 const makeSettingFile = async () => {
-  console.log(`
-  Before setting up, you need to create an API key for DeepL.
-  If you have not yet created an API key, you can create from here.
-  https://www.deepl.com/pro-api
-  `);
+  console.log(
+    'Before setting up, you need to create an API key for DeepL.\n' +
+      'If you have not yet created an API key, you can create from here.\n' +
+      'https://www.deepl.com/pro-api\n'
+  );
 
   const setting = await inquirer.prompt([
     {
