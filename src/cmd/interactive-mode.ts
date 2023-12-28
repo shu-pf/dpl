@@ -2,17 +2,7 @@ import { translateText } from '../api/translate-text';
 import readline from 'readline';
 import { setting } from '../config/setting';
 import chalk from 'chalk';
-
-function showSpinner(text: string) {
-  const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
-  let i = 0;
-  return setInterval(() => {
-    process.stdout.clearLine(0); // 0は現在の行をクリアすることを指定
-    process.stdout.cursorTo(0); // カーソルを行の先頭に移動
-    process.stdout.write(chalk.green(`${frames[i]} ${text}`)); // スピナーフレームを表示
-    i = (i + 1) % frames.length;
-  }, 100);
-}
+import { showSpinner, stopSpinner } from '../utils/terminal';
 
 /**
  * 対話モード
@@ -36,9 +26,7 @@ const interactiveMode = () => {
         ...setting,
       });
 
-      clearInterval(spinner); // スピナーを停止
-      process.stdout.clearLine(0); // 0は現在の行をクリアすることを指定
-      process.stdout.cursorTo(0); // カーソルを行の先頭に移動
+      stopSpinner(spinner);
 
       console.log(translatedText);
       console.log('--------------------------');

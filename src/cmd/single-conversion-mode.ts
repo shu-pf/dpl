@@ -1,5 +1,6 @@
 import { translateText } from '../api/translate-text';
 import { setting } from '../config/setting';
+import { showSpinner, stopSpinner } from '../utils/terminal';
 
 /**
  * 単発変換モード
@@ -12,15 +13,14 @@ const singleConversionMode = async () => {
    * 翻訳処理
    */
 
-  console.log('Translating...');
+  const spinner = showSpinner('Translating');
 
   const translatedText = await translateText({
     text: string,
     ...setting,
   });
 
-  // 1行上にカーソルを移動して、その行をクリアする
-  process.stdout.write('\x1b[1F\x1b[K');
+  stopSpinner(spinner);
 
   console.log(translatedText);
 
