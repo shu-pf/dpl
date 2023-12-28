@@ -25,6 +25,7 @@ brew update
 
 ```sh
 brew upgrade dpl
+
 # If you cannot upgrade
 brew reinstall dpl
 ```
@@ -39,12 +40,6 @@ To use this package, you first need to set an API key and Target Language.
 dpl setting
 ```
 
-### Normal mode
-
-```sh
-dpl <text>
-```
-
 ### Interactive mode
 
 ```sh
@@ -56,6 +51,12 @@ Press "q" to quit.
 > <text>
 > t
 <translated text>
+```
+
+### Normal mode
+
+```sh
+dpl <text>
 ```
 
 ## For Developers
