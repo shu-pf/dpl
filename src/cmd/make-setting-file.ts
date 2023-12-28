@@ -3,13 +3,15 @@ import { languageOptions } from '../const/languageOptions';
 import { writeFileWithDirectoryCreation } from '../utils/file';
 import { settingFilePath } from '../const/settingFilePath';
 
+/**
+ * 設定ファイルを作成する
+ */
 const makeSettingFile = async () => {
-  console.log(
-    'Before setting up, you need to issue an API key for Deepl, and apply for API usage on the official Deepl website.'
-  );
-  console.log(
-    'If you have not yet issued an API key, you can do so from here. https://www.deepl.com/pro-api\n'
-  );
+  console.log(`
+  Before setting up, you need to create an API key for DeepL.
+  If you have not yet created an API key, you can create from here.
+  https://www.deepl.com/pro-api
+  `);
 
   const setting = await inquirer.prompt([
     {
