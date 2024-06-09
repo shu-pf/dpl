@@ -3,6 +3,7 @@
   "version": "1.2.0",
   "description": "Use deepl with cli.",
   "main": "src/index.js",
+  "packageManager": "pnpm@9.1.4",
   "scripts": {
     "bundle": "esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/bundle.js",
     "start": "pnpm bundle && node dist/bundle.js",
